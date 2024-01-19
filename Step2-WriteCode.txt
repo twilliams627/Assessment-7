@@ -1,0 +1,55 @@
+// Sum to Zero
+
+function hasSumToZero(arr) {
+    const numSet = new Set();
+  
+    for (let num of arr) {
+      if (numSet.has(-num)) {
+        return true;
+      }
+      numSet.add(num);
+    }
+  
+    return false;
+  }
+  
+  // Runtime: O(n), n is the length of the array.
+  // Space Complexity: O(n) we use a set to store numbers.
+  
+
+  // Unique Characters
+
+  function hasUniqueCharacters(word) {
+    const charSet = new Set();
+  
+    for (let char of word) {
+      if (charSet.has(char)) {
+        return false;
+      }
+      charSet.add(char);
+    }
+  
+    return true;
+  }
+  
+  // Runtime: O(n), n is the length of the word.
+  // Space Complexity: O(n) we use a set to store characters.
+  
+
+  // Pangram Sentence
+
+  function isPangram(sentence) {
+    const alphabetSet = new Set("abcdefghijklmnopqrstuvwxyz");
+  
+    for (let char of sentence.toLowerCase()) {
+      alphabetSet.delete(char);
+    }
+  
+    return alphabetSet.size === 0;
+  }
+  
+  // Runtime: O(n), n is the length of the sentence.
+  // Space Complexity: O(1) the set has a constant size of 26 characters.
+  
+  
+

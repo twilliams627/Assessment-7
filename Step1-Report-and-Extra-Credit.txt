@@ -1,0 +1,19 @@
+   Analyzing the results, I found a pattern in both the performance of the doublerAppend and
+doublerInsert functions with arrays of different sizes. For both functions, as the size of the array
+increased, the execution time also increased as well. However, the rate at which the execution
+time grows is differed in each function. The doublerInsert function, which uses the unshift
+method to add elements at the beginning of the array, exhibits a slower scaling pattern when
+compared to the doublerAppend function, which uses the push method to add elements at the end
+of the array. When talking about scaling, the doublerAppend function scales better, as its
+execution times remain low and stable even for larger arrays. The doublerInsert function
+however experienced an increase in execution time as the array grew.
+
+   The reason that the doublerInsert function scales slowly is because of the nature of the unshift
+method. Adding an element to the beginning of an array using unshift requires shifting all
+existing elements to higher indices, which becomes more and more time-consuming the larger
+the array grows. The push method however adds elements to the end of the array efficiently,
+making it a more scalable choice for appending elements.
+
+    In conclusion, the doublerAppend function scales better than the doublerInsert function, and
+the difference in scaling is due to the inefficiency of the unshift method when compared to the
+push method for large arrays.
